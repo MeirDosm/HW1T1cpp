@@ -1,0 +1,50 @@
+#include <iostream>
+#include  <string>
+#include <vector>
+using namespace std;
+
+class drob {
+private:
+	int x;
+	int y;
+public:
+	drob(int a = 0, int b = 1) {
+		setDrob(a, b);
+	}
+//	~drob() {
+//		cout << "drob destructor\n";
+//	}
+	void get_x() { 
+	    cin >> x;	
+	}
+    void get_y() { 
+	    cin >> y;	    
+	}
+	void setDrob(int a,int b){
+		x = a;
+		if (b == 0)
+			b = 1;
+		y = b;
+	}
+	void print() {
+		cout << x << "/" << y << " = " 
+			<< x / y << "\n";
+	}
+};
+
+int main() {
+	{
+		drob a;
+		cout << "Enter 1st number: ";
+		a.get_x();
+		cout << "Enter 2nd number: ";
+		a.get_y();
+		cout << "The fraction is ";		
+		a.print();
+		drob b(7,2);  
+		cout << "The another fraction is ";
+		b.print(); 
+	}
+	system("pause");
+	return 0;
+}
